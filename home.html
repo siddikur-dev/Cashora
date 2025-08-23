@@ -49,67 +49,201 @@
                 <h2 class="text-lg font-bold">Welcome to <span class="text-[#0874F2]">Cashora</span>!</h2>
                 <p class="text-sm text-gray-500">
                     Enjoy easy and convenient financial services with us. <br />
-                    Cashout charge is low and
+                    Cash Out charge is low and
                 </p>
             </div>
 
             <!-- Actions -->
             <div class="grid grid-cols-3 gap-4 mb-6">
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="addMoneyButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/wallet1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Add Money</span>
                 </div>
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="cashOutButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/send1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Cashout</span>
                 </div>
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="transferMoneyButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/money1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Transfer Money</span>
                 </div>
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="getBonusButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/bonus1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Get Bonus</span>
                 </div>
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="payBillButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/purse1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Pay Bill</span>
                 </div>
-                <div class="btn btn-outline flex flex-col gap-2 h-24">
+                <div id="transactionButton" class="btn btn-outline flex flex-col gap-2 h-24">
                     <img src="./assets/transaction1.png" class="w-8 h-8 mx-auto" alt="">
                     <span class="text-xs">Transactions</span>
                 </div>
             </div>
 
-            <!-- add money -->
-            <h1 class="font-bold text-xl text-center text-[#0874F2]">Add Money</h1>
-            <div class=" p-4 justify-center items-center ">
 
-                <div class="bg-white rounded-xl p-3 ">
-                    <!-- select -->
-                    <!-- <fieldset class="fieldset"> -->
-                    <legend class="fieldset-legend text-sm font-bold">Select A Bank</legend>
-                    <select class="select input rounded-4xl p-3 border-none  bg-[#dcdcdd] " required>
-                        <option disabled selected>Select Bank</option>
-                        <option>IFIC</option>
-                        <option>Cellfin</option>
-                        <option>MCash</option>
-                    </select>
-                    <!-- </fieldset> -->
-                    <!-- form start -->
-                    <label class="label font-bold text-black text-sm">Bank Account Number</label>
-                    <input id="accountNumber" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                        placeholder="Enter 11 Digit Account Number" required />
-                    <label class="label font-bold text-black text-sm">Amount To Add</label>
-                    <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                        placeholder="Add Amount To Withdraw" />
+            <!-- add money parent -->
+            <div id="addMoneyParent" style="display: none;">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Add Money</h1>
+                <div class=" p-4 justify-center items-center ">
 
-                    <label class="label font-bold text-black text-sm">4 Digit Pin</label>
-                    <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
-                        placeholder="Pin Number" required />
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- select -->
+                        <!-- <fieldset class="fieldset"> -->
+                        <legend class="fieldset-legend text-sm font-bold">Select A Bank</legend>
+                        <select class="select input rounded-4xl p-3 border-none  bg-[#dcdcdd] " required>
+                            <option disabled selected>Select Bank</option>
+                            <option>IFIC</option>
+                            <option>Cellfin</option>
+                            <option>MCash</option>
+                        </select>
+                        <!-- </fieldset> -->
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">Bank Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Add</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Add Amount To Withdraw" />
 
-                    <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Add
-                        Money</button>
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Add
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+            <!-- cashOutParent -->
+            <div id="cashOutParent">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Cash Out</h1>
+                <div class=" p-4 justify-center items-center ">
+
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">Bank/Agent Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Cash Out</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Cash Out Amount " />
+
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Add
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+            <!-- cashOutParent -->
+            <div id="transferMoneyParent" style="display: none;">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Transfer Money</h1>
+                <div class=" p-4 justify-center items-center ">
+
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">User Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Send Money</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Send Money Amount " />
+
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Send
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+            <!-- getBonusParent -->
+            <div id="getBonusParent" style="display: none;">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Get Bonus</h1>
+                <div class=" p-4 justify-center items-center ">
+
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">User Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Send Money</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Send Money Amount " />
+
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Send
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+            <!-- getBonusParent -->
+            <div id="getBonusParent" style="display: none;">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Get Bonus</h1>
+                <div class=" p-4 justify-center items-center ">
+
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">User Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Send Money</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Send Money Amount " />
+
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Send
+                            Money</button>
+                    </div>
+                </div>
+            </div>
+            <!-- add money parent -->
+            <div id="payBIll" style="display: none;">
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Pay Bill</h1>
+                <div class=" p-4 justify-center items-center ">
+
+                    <div class="bg-white rounded-xl p-3 ">
+                        <!-- select -->
+                        <!-- <fieldset class="fieldset"> -->
+                        <legend class="fieldset-legend text-sm font-bold">Select A Bank</legend>
+                        <select class="select input rounded-4xl p-3 border-none  bg-[#dcdcdd] " required>
+                            <option disabled selected>Select Bank</option>
+                            <option>BREB</option>
+                            <option>NESCO</option>
+                            <option>TITAS</option>
+                        </select>
+                        <!-- </fieldset> -->
+                        <!-- form start -->
+                        <label class="label font-bold text-black text-sm">Biller Account Number</label>
+                        <input id="accountNumber" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Enter 11 Digit Account Number" required />
+                        <label class="label font-bold text-black text-sm">Amount To Add</label>
+                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                            placeholder="Add Amount To Withdraw" />
+
+                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                            placeholder="Pin Number" required />
+
+                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Pay
+                            Bill</button>
+                    </div>
                 </div>
             </div>
         </div>
