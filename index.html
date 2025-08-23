@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashora</title>
+    <!-- tailwind and daisy CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- outfit font  -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        body {
+            font-family: "Outfit", sans-serif;
+        }
+
+        /* Chrome, Safari, Edge - spinner (↑ ↓) Hide*/
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+
+</head>
+
+<body class="h-screen  ">
+    <!-- Login form -->
+    <div class="flex justify-center items-center h-screen  bg-black ">
+
+        <fieldset class="  w-xs  bg-[#c8c8c9] h-screen">
+            <div class=" p-4 justify-center items-center ">
+                <!-- image -->
+                <div class="relative py-15 ">
+                    <img class=" pb-6  absolute" src="./assets/bg.png" alt="">
+                    <img class=" pl-28 py-4 items-center" src="./assets/Group.png" alt="">
+                </div>
+                <!-- form start -->
+                <div class="bg-white rounded-xl p-3 ">
+                    <label class="label font-bold text-black text-sm">Mobile Number</label>
+                    <input type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                        placeholder="Enter Your Number" />
+
+                    <label class="label font-bold text-black text-sm">4 Digit Pin</label>
+                    <input type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
+                        placeholder="Pin Number" />
+
+                    <button class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Login</button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>
