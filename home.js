@@ -1,9 +1,8 @@
+// Add Money Feature
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   e.preventDefault();
   //get input field value
-  const bankAccountNumber = parseInt(
-    document.getElementById("accountNumber").value
-  );
+  const bankAccountNumber = document.getElementById("accountNumber").value;
   const addAmount = parseInt(document.getElementById("addAmount").value);
   const pinNumber = parseInt(document.getElementById("pinNumber").value);
   const availableBalance = parseInt(
@@ -11,7 +10,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   );
   //accountNumber and pin number validate
   if (addAmount <= 10000) {
-    if (bankAccountNumber < 11) {
+    if (bankAccountNumber.length < 11) {
       alert("Please Input 11 Digit Phone Number");
       return;
     } else if (pinNumber !== 1234) {
@@ -24,6 +23,36 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
     alert("Add amount maximum: 10k");
   }
 });
+
+// Cash Out Feature
+document.getElementById("cashOutBtn").addEventListener("click", function (e) {
+  e.preventDefault();
+  //get value from input field
+
+  const cashOutNumber = parseInt(
+    document.getElementById("cashOutNumber").value
+  );
+  const cashOutNumberPin = parseInt(
+    document.getElementById("cashOutPinNumber").value
+  );
+  const cashOutAmount = parseInt(
+    document.getElementById("cashOutAmount").value
+  );
+  const availableBalance = parseInt(
+    document.getElementById("availableBalance").innerText
+  );
+  const remainingBalance = availableBalance - cashOutAmount;
+
+  if (cashOutNumber < 11) {
+    alert("Invalid Mobile Number");
+    return;
+  } else if (cashOutNumberPin !== 1234) {
+    alert("Invalid Pin Number");
+    return;
+  }
+  document.getElementById("availableBalance").innerText = remainingBalance;
+});
+
 
 //featured toggle
 // addMoney
@@ -50,9 +79,9 @@ document
     document.getElementById(
       "addMoneyParent",
       "cashOutParent",
-      "getBonusParent",
-      "payBillButton"
+      "getBonusParent"
     ).style.display = "none";
+    document.getElementById("payBillButton").style.display = "none";
     document.getElementById("transferMoneyParent").style.display = "block";
   });
 document
