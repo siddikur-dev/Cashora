@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cashora ||Login </title>
+    <title>Cashora Login </title>
+    <link rel="shortcut icon" href="./assets/Group.png" type="image/x-icon">
     <!-- tailwind and daisy CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -29,8 +30,6 @@
 </head>
 
 <body class="h-screen  ">
-    <!-- Alert Showing -->
-    <div id="messageContainer"></div>
 
     <!-- Login form -->
     <form action="
@@ -44,15 +43,16 @@
                         <img class=" pb-6  absolute" src="./assets/bg.png" alt="">
                         <img class=" pl-28 py-4 items-center" src="./assets/Group.png" alt="">
                     </div>
+                    
                     <!-- form start -->
                     <div class="bg-white rounded-xl p-3 ">
                         <label class="label font-bold text-black text-sm">Mobile Number</label>
                         <input id="mobileNumber" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                            placeholder="Enter Your Number" />
+                            placeholder="Enter Your Number" value="01751920983" />
 
                         <label class="label font-bold text-black text-sm">4 Digit Pin</label>
                         <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
-                            placeholder="Pin Number" />
+                            placeholder="Pin Number" value="1234" />
 
                         <button id="login-btn"
                             class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Login</button>

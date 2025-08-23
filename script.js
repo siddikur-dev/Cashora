@@ -15,28 +15,22 @@ document.getElementById("login-btn").addEventListener("click", function (e) {
   //   Our Provided Number
   const convertedOurProvidedNumber = parseInt(mobileNumber);
 
-// alertShowingInnerHTMLCreate
-const showingAlert = document.getElementById("messageContainer");
+  // alertShowingInnerHTMLCreate
+  const showingAlert = document.getElementById("messageContainer");
 
-if (
-  convertedOurProvidedNumber === convertedMobileNumberValue &&
-  pinNumber === convertedPinNumberValue
-) {
-//   showingAlert.innerHTML = `
-//     <div role="alert" class="alert alert-success alert-soft">
-//       <span>Credential Matched</span>
-//     </div>
-//   `;
-  console.log("match");
-  window.location.href = "./home.html";
-  alert("Credential Matched")
-} else {
-//   showingAlert.innerHTML = `
-//     <div role="alert" class="alert alert-error alert-soft">
-//       <span>Invalid Credential!</span>
-//     </div>
-//   `;
-  alert("Invalid Credential !")
-}
-
+  if (
+    convertedOurProvidedNumber === convertedMobileNumberValue &&
+    pinNumber === convertedPinNumberValue
+  ) {
+    console.log("match");
+    window.location.href = "./home.html";
+    alert("Credential Matched! Successfully Login");
+  } else {
+    //   showingAlert.innerHTML = `
+    //     <div role="alert" class="alert alert-error alert-soft">
+    //       <span>Invalid Credential!</span>
+    //     </div>
+    //   `;
+    alert("Invalid Credential !");
+  }
 });
