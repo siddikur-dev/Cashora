@@ -1,13 +1,28 @@
+//get value from input field
+
+function getInputValue(id) {
+  const getId = document.getElementById(id);
+  const getValue = getId.value;
+  const strToNb = parseInt(getValue);
+  return strToNb;
+}
+//get normal value of innerText
+function getInnerTextValue(id) {
+  const innerText = document.getElementById(id).innerText;
+  return parseInt(innerText);
+}
+
+//6 button feature impleament start
+
 // Add Money Feature
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   e.preventDefault();
   //get input field value
-  const bankAccountNumber = document.getElementById("accountNumber").value;
-  const addAmount = parseInt(document.getElementById("addAmount").value);
-  const pinNumber = parseInt(document.getElementById("pinNumber").value);
-  const availableBalance = parseInt(
-    document.getElementById("availableBalance").innerText
-  );
+  const bankAccountNumber = getInputValue("accountNumber");
+
+  const addAmount = getInputValue("addAmount");
+  const pinNumber = getInputValue("pinNumber");
+  const availableBalance = getInnerTextValue("availableBalance");
   //accountNumber and pin number validate
   if (addAmount <= 10000) {
     if (bankAccountNumber.length < 11) {
@@ -17,7 +32,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
       alert("Please give me correct pin");
       return;
     }
-    const newBalance = addAmount + availableBalance;
+    const newBalance = addAmount + parseInt(availableBalance);
     document.getElementById("availableBalance").innerText = newBalance;
   } else {
     alert("Add amount maximum: 10k");
@@ -29,21 +44,17 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
   e.preventDefault();
   //get value from input field
 
-  const cashOutNumber = parseInt(
-    document.getElementById("cashOutNumber").value
-  );
-  const cashOutNumberPin = parseInt(
-    document.getElementById("cashOutPinNumber").value
-  );
-  const cashOutAmount = parseInt(
-    document.getElementById("cashOutAmount").value
-  );
-  const availableBalance = parseInt(
-    document.getElementById("availableBalance").innerText
-  );
+  const cashOutNumber = getInputValue("cashOutNumber");
+
+  const cashOutNumberPin = getInputValue("cashOutPinNumber");
+  const cashOutAmount = getInputValue("cashOutAmount");
+  const availableBalance = getInnerTextValue("availableBalance");
   const remainingBalance = availableBalance - cashOutAmount;
 
-  if (cashOutNumber < 11) {
+  if (availableBalance < cashOutAmount) {
+    alert("Please Add Money Your Account");
+    return;
+  } else if (cashOutNumber < 11) {
     alert("Invalid Mobile Number");
     return;
   } else if (cashOutNumberPin !== 1234) {
@@ -53,6 +64,15 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
   document.getElementById("availableBalance").innerText = remainingBalance;
 });
 
+//
+
+//Feature  display none func
+function displayNone(id) {
+  document.getElementById(id).style.display = "none";
+}
+function displayBlock(id) {
+  document.getElementById(id).style.display = "block";
+}
 
 //featured toggle
 // addMoney
@@ -76,13 +96,12 @@ document.getElementById("cashOutButton").addEventListener("click", function () {
 document
   .getElementById("transferMoneyButton")
   .addEventListener("click", function () {
-    document.getElementById(
-      "addMoneyParent",
-      "cashOutParent",
-      "getBonusParent"
-    ).style.display = "none";
-    document.getElementById("payBillButton").style.display = "none";
-    document.getElementById("transferMoneyParent").style.display = "block";
+    displayNone("addMoneyParent");
+    displayNone("cashOutParent");
+    displayNone("getBonusParent");
+    displayNone("payBillButtonParent");
+    displayNone("transactionParent");
+    displayBlock("transferMoneyParent");
   });
 document
   .getElementById("getBonusButton")
