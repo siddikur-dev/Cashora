@@ -150,18 +150,21 @@
                     <div class="bg-white rounded-xl p-3 ">
                         <!-- form start -->
                         <label class="label font-bold text-black text-sm">User Account Number</label>
-                        <input id="accountNumber" type="number"
+                        <input id="transferMoneyAccountNumber" type="number"
                             class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
                             placeholder="Enter 11 Digit Account Number" value="01751920983" />
-                        <label class="label font-bold text-black text-sm"> Send Money Amount </label>
-                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                            placeholder="Send Money Amount " value="2000" />
+                        <label class="label font-bold text-black text-sm"> Transfer Money Amount </label>
+                        <input id="transferAmount" type="number"
+                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] " placeholder="Send Money Amount "
+                            value="2000" />
 
                         <label class="label font-bold text-black text-sm">4 Digit Pin</label>
-                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
-                            placeholder="Pin Number" value="1234" />
+                        <input id="transferPinNumber" type="number"
+                            class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] " placeholder="Pin Number"
+                            value="1234" />
 
-                        <button id="cashOutBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Send
+                        <button id="transferMoneyBtn"
+                            class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Transfer
                             Money</button>
                     </div>
                 </div>
@@ -192,7 +195,7 @@
             </div>
             <!-- payBill Parent -->
             <div id="payBillButtonParent" style="display: none;">
-                <h1 class="font-bold text-xl text-center text-[#0874F2]">Get Bonus</h1>
+                <h1 class="font-bold text-xl text-center text-[#0874F2]">Pay Bill</h1>
                 <div class=" p-4 justify-center items-center ">
 
                     <div class="bg-white rounded-xl p-3 ">
@@ -232,8 +235,7 @@
                         <!-- </fieldset> -->
                         <!-- form start -->
                         <label class="label font-bold text-black text-sm">Biller Account Number</label>
-                        <input id="accountNumber" type="number"
-                            class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
+                        <input id="" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
                             placeholder="Enter 11 Digit Account Number" required />
                         <label class="label font-bold text-black text-sm">Amount To Add</label>
                         <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "

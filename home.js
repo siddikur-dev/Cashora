@@ -12,7 +12,7 @@ function getInnerTextValue(id) {
   return parseInt(innerText);
 }
 
-//6 button feature impleament start
+//6 button feature impleFment start
 
 // Add Money Feature
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
@@ -64,7 +64,39 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
   document.getElementById("availableBalance").innerText = remainingBalance;
 });
 
-//
+//transfer money feature
+document
+  .getElementById("transferMoneyBtn")
+  .addEventListener("click", function () {
+    const transferAccount = getInputValue("transferMoneyAccountNumber");
+    const transferAmount = getInputValue("transferAmount");
+    const transferPin = getInputValue("transferPinNumber");
+    const availableBalance = getInnerTextValue("availableBalance");
+
+    const remainingBalance = availableBalance - transferAmount;
+
+    //transfer balance less then available balance then alert
+    const alertBalance = transferAmount - availableBalance;
+    if (availableBalance < transferAmount) {
+      alert(`Minimum Add To Balance: ${alertBalance} `);
+      return;
+    } else if (transferAccount < 11) {
+      alert("Invalid Mobile Number");
+      return;
+    } else if (transferPin !== 1234) {
+      alert("Invalid Pin Number");
+      return;
+    }
+
+    document.getElementById("availableBalance").innerText = remainingBalance;
+  });
+
+//getBonus Button  feature
+document
+  .getElementById("getBonusButton")
+  .addEventListener("click", function () {
+    document.getElementById();
+  });
 
 //Feature  display none func
 function displayNone(id) {
@@ -79,18 +111,17 @@ function displayBlock(id) {
 document
   .getElementById("addMoneyButton")
   .addEventListener("click", function () {
-    document.getElementById("cashOutParent").style.display = "none";
-    document.getElementById("addMoneyParent").style.display = "block";
+    displayNone("cashOutParent");
+    displayNone("transferMoneyParent");
+    displayBlock("addMoneyParent");
   });
 //   cashOut
 document.getElementById("cashOutButton").addEventListener("click", function () {
-  document.getElementById(
-    "addMoneyParent",
-    "transferMoneyParent",
-    "getBonusParent",
-    "payBillButton"
-  ).style.display = "none";
-  document.getElementById("cashOutParent").style.display = "block";
+  displayNone("addMoneyParent");
+  displayNone("transferMoneyParent");
+  displayNone("getBonusParent");
+  displayNone("payBillButton");
+  displayBlock("cashOutParent");
 });
 // transfer money
 document
@@ -103,6 +134,30 @@ document
     displayNone("transactionParent");
     displayBlock("transferMoneyParent");
   });
+
+// getBonus Button
+document
+  .getElementById("getBonusButton")
+  .addEventListener("click", function () {
+    displayNone("addMoneyParent");
+    displayNone("cashOutParent");
+    displayNone("getBonusParent");
+    displayNone("payBillButtonParent");
+    displayNone("transactionParent");
+    displayNone("transferMoneyParent");
+    displayBlock("getBonusButton");
+  });
+// payBill  Button
+document.getElementById("payBillButton").addEventListener("click", function () {
+  displayNone("addMoneyParent");
+  displayNone("cashOutParent");
+  displayNone("getBonusParent");
+  displayNone("transactionParent");
+  displayNone("transferMoneyParent");
+  displayBlock("payBillButtonParent");
+  displayBlock("payBillButton");
+});
+
 document
   .getElementById("getBonusButton")
   .addEventListener("click", function () {
@@ -115,12 +170,3 @@ document
     ).style.display = "none";
     document.getElementById("getBonusParent").style.display = "block";
   });
-document.getElementById("payBillButton").addEventListener("click", function () {
-  document.getElementById(
-    "addMoneyParent",
-    "cashOutParent",
-    "transferMoneyParent",
-    "getBonusParent"
-  ).style.display = "none";
-  document.getElementById("payBIll").style.display = "block";
-});
