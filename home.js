@@ -120,7 +120,7 @@ document.getElementById("cashOutButton").addEventListener("click", function () {
   displayNone("addMoneyParent");
   displayNone("transferMoneyParent");
   displayNone("getBonusParent");
-  displayNone("payBillButton");
+  displayNone("payBillButtonParent");
   displayBlock("cashOutParent");
 });
 // transfer money
@@ -146,6 +146,7 @@ document
     displayNone("transactionParent");
     displayNone("transferMoneyParent");
     displayBlock("getBonusButton");
+    displayBlock("getBonusParent");
   });
 // payBill  Button
 document.getElementById("payBillButton").addEventListener("click", function () {
@@ -158,3 +159,16 @@ document.getElementById("payBillButton").addEventListener("click", function () {
   displayBlock("payBillButton");
 });
 
+// transaction button
+document
+  .getElementById("transactionButton")
+  .addEventListener("click", function () {
+    displayNone("addMoneyParent");
+    displayNone("cashOutParent");
+    displayNone("getBonusParent");
+    displayNone("transactionParent");
+    displayNone("transferMoneyParent");
+    displayNone("payBillButtonParent");
+    displayBlock("transactionParent");
+    // displayBlock("payBillButton");
+  });
