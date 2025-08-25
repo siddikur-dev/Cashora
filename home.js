@@ -117,7 +117,18 @@ document.getElementById("payBillBtn").addEventListener("click", function () {
 
   const remainingBalance = availableBalance - amountToPay;
 
- 
+  //transfer balance less then available balance then alert
+  const alertBalance = amountToPay - availableBalance;
+  if (availableBalance < amountToPay) {
+    alert(`Minimum Add To Balance: ${alertBalance} `);
+    return;
+  } else if (billerAccountNumber < 11) {
+    alert("Invalid Mobile Number");
+    return;
+  } else if (payPinNumber !== 1234) {
+    alert("Invalid Pin Number");
+    return;
+  }
 
   document.getElementById("availableBalance").innerText = remainingBalance;
 });
