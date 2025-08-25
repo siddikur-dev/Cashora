@@ -12,7 +12,7 @@ function getInnerTextValue(id) {
   return parseInt(innerText);
 }
 
-//6 button feature impleFment start
+//6 button feature implement start
 
 // Add Money Feature
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
@@ -92,11 +92,22 @@ document
   });
 
 //getBonus Button  feature
-// document
-//   .getElementById("getBonusButton")
-//   .addEventListener("click", function () {
-//     document.getElementById();
-//   });
+document.getElementById("getBonus").addEventListener("click", function () {
+  const applyCouponCode = document.getElementById("applyCouponCode").value;
+  const bonusPinNumber = getInputValue("getBonusPinNumber");
+  const availableBalance = getInnerTextValue("availableBalance");
+  const newBonusNumber = availableBalance + 2000;
+  if (applyCouponCode === "siddikur-dev") {
+    document.getElementById("availableBalance").innerText = newBonusNumber;
+  } else {
+    alert("your coupon code is wrong!'");
+    return;
+  }
+  if (bonusPinNumber !== 1234) {
+    alert("Invalid Pin Number");
+    return;
+  }
+});
 
 //Feature  display none func
 function displayNone(id) {
@@ -107,7 +118,8 @@ function displayBlock(id) {
 }
 
 //featured toggle
-// addMoney
+
+// addMoney feature
 document
   .getElementById("addMoneyButton")
   .addEventListener("click", function () {
