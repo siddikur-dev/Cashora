@@ -133,6 +133,13 @@ document.getElementById("payBillBtn").addEventListener("click", function () {
   document.getElementById("availableBalance").innerText = remainingBalance;
 });
 
+//transaction feature
+document.getElementById('transactionButton')
+.addEventListener("click",function(){
+  
+})
+//6 button feature implement end
+
 //Feature  display none func
 function displayNone(id) {
   document.getElementById(id).style.display = "none";
