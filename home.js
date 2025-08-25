@@ -149,6 +149,7 @@ document
   .addEventListener("click", function () {
     displayNone("cashOutParent");
     displayNone("transferMoneyParent");
+    displayNone("transactionParent");
     displayBlock("addMoneyParent");
   });
 //   cashOut
@@ -206,5 +207,4 @@ document
     displayNone("transferMoneyParent");
     displayNone("payBillButtonParent");
     displayBlock("transactionParent");
-    // displayBlock("payBillButton");
   });

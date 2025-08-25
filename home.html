@@ -225,34 +225,43 @@
             </div>
             <!-- transaction parent -->
             <div id="transactionParent" style="display: none;">
-                <h1 class="font-bold text-xl text-center text-[#0874F2]">Transaction </h1>
-                <div class=" p-4 justify-center items-center ">
+                <div class="flex justify-center items-center h-screen bg-black">
+                    <div class="w-xs bg-[#f5f5f5] h-screen overflow-y-auto p-4">
+                        <h1 class="font-bold text-xl text-center text-[#0874F2] mb-4">Transaction History</h1>
 
-                    <div class="bg-white rounded-xl p-3 ">
-                        <!-- select -->
-                        <!-- <fieldset class="fieldset"> -->
-                        <legend class="fieldset-legend text-sm font-bold">Select A Bank</legend>
-                        <select class="select input rounded-4xl p-3 border-none  bg-[#dcdcdd] " required>
-                            <option disabled selected>Select Bank</option>
-                            <option>BREB</option>
-                            <option>NESCO</option>
-                            <option>TITAS</option>
-                        </select>
-                        <!-- </fieldset> -->
-                        <!-- form start -->
-                        <label class="label font-bold text-black text-sm">Biller Account Number</label>
-                        <input id="" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                            placeholder="Enter 11 Digit Account Number" required />
-                        <label class="label font-bold text-black text-sm">Amount To Add</label>
-                        <input id="addAmount" type="number" class=" input rounded-4xl p-3 border-none  bg-[#dcdcdd] "
-                            placeholder="Add Amount To Withdraw" />
+                        <!-- Transactions List -->
+                        <div id="transactionHistoryParent" class="space-y-3">
 
-                        <label class="label font-bold text-black text-sm">4 Digit Pin</label>
-                        <input id="pinNumber" type="number" class="input  rounded-4xl p-3 border-none bg-[#dcdcdd] "
-                            placeholder="Pin Number" required />
+                            <!-- Example Transaction Card -->
+                            <div class="bg-white shadow-md rounded-xl p-3">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold text-sm text-gray-700">Cash Out</h3>
+                                    <span class="text-xs text-gray-500">22 Aug 2025</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Account: 01751920983</p>
+                                <p class="font-bold text-green-600">- 2,000 ৳</p>
+                            </div>
 
-                        <button id="addMoneyBtn" class="btn bg-[#0874F2] mt-4 rounded-full w-full text-white">Pay
-                            Bill</button>
+                            <div class="bg-white shadow-md rounded-xl p-3">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold text-sm text-gray-700">Add Money</h3>
+                                    <span class="text-xs text-gray-500">21 Aug 2025</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Bank: IFIC</p>
+                                <p class="font-bold text-blue-600">+ 5,000 ৳</p>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-xl p-3">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold text-sm text-gray-700">Transfer</h3>
+                                    <span class="text-xs text-gray-500">20 Aug 2025</span>
+                                </div>
+                                <p class="text-sm text-gray-600">To: 01795731651</p>
+                                <p class="font-bold text-red-600">- 1,500 ৳</p>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
