@@ -92,11 +92,11 @@ document
   });
 
 //getBonus Button  feature
-document
-  .getElementById("getBonusButton")
-  .addEventListener("click", function () {
-    document.getElementById();
-  });
+// document
+//   .getElementById("getBonusButton")
+//   .addEventListener("click", function () {
+//     document.getElementById();
+//   });
 
 //Feature  display none func
 function displayNone(id) {
@@ -158,15 +158,3 @@ document.getElementById("payBillButton").addEventListener("click", function () {
   displayBlock("payBillButton");
 });
 
-document
-  .getElementById("getBonusButton")
-  .addEventListener("click", function () {
-    document.getElementById(
-      "addMoneyParent",
-      "cashOutParent",
-      "getBonusParent",
-      "payBillButton",
-      "transferMoneyParent"
-    ).style.display = "none";
-    document.getElementById("getBonusParent").style.display = "block";
-  });
