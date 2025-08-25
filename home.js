@@ -108,6 +108,19 @@ document.getElementById("getBonus").addEventListener("click", function () {
     return;
   }
 });
+//payBillBtn  feature
+document.getElementById("payBillBtn").addEventListener("click", function () {
+  const billerAccountNumber = getInputValue("billerAccountNumber");
+  const amountToPay = getInputValue("amountToPay");
+  const payPinNumber = getInputValue("payPinNumber");
+  const availableBalance = getInnerTextValue("availableBalance");
+
+  const remainingBalance = availableBalance - amountToPay;
+
+ 
+
+  document.getElementById("availableBalance").innerText = remainingBalance;
+});
 
 //Feature  display none func
 function displayNone(id) {
